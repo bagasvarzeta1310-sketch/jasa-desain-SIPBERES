@@ -1,48 +1,42 @@
-// 1. Navbar Efek Scroll (Berubah warna saat di-scroll ke bawah)
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Hamburger Menu untuk Mode Mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            // Logika sederhana untuk menampilkan/menyembunyikan menu di HP
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px';
+                navLinks.style.right = '5%';
+                navLinks.style.background = 'rgba(0,0,0,0.9)';
+                navLinks.style.padding = '20px';
+                navLinks.style.borderRadius = '10px';
+                navLinks.style.gap = '15px';
+            }
+        });
     }
-});
 
-// 2. Mobile Menu Toggle (Buka tutup menu di HP)
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Tutup menu saat link diklik (khusus mobile)
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+    // 2. Smooth Scrolling untuk Link Navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Tutup menu mobile otomatis setelah klik link
+                if(window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                }
+            }
+        });
     });
-});
-
-// 3. Modern Scroll Reveal Animation menggunakan Intersection Observer
-// Ini jauh lebih ringan dan mulus daripada menggunakan event listener 'scroll' biasa
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.15, // Elemen akan muncul ketika 15% bagiannya terlihat di layar
-    rootMargin: "0px 0px -50px 0px" // Trigger sedikit lebih cepat sebelum benar-benar masuk layar penuh
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            appearOnScroll.unobserve(entry.target); // Berhenti mengobservasi setelah animasi selesai agar ringan
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
 });
