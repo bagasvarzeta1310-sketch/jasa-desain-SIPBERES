@@ -3,131 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SipBeress Production | Portofolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portofolio Fotografi & Editing</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <a href="#" class="logo">Sip<span>Beress</span></a>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#pricelist">Pricelist</a></li>
-            <li><a href="#gallery" class="active">Gallery</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content fade-in">
-            <div class="profile-wrapper">
-                <img src="https://ui-avatars.com/api/?name=SB&background=random" alt="Profile" class="profile-img">
-                <i class="fas fa-check-circle verified-badge"></i>
-            </div>
-            <h1>Capture<br>The moment's</h1>
-            <h2><span>of human activities.</span></h2>
-            <p>With Our Team | SipBeress Production</p>
-            <br>
-            <a href="https://wa.me/6285231230978" target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Order Sekarang
-            </a>
-        </div>
-    </section>
-
-    <section id="pricelist">
-        <h2 class="section-title fade-in">Jasa Joki SipBeress 🎬</h2>
-        <p class="section-subtitle fade-in">Pilihan layanan editing & video terbaik untuk Anda.</p>
+    <header class="hero" id="home">
+        <div class="overlay"></div>
         
-        <div class="pricelist-container">
-            <div class="price-card fade-in slide-up">
-                <h3>1. Vlog / Tugas Sekolah</h3>
-                <div class="price">Rp20k+</div>
-                <p><em>(Cocok untuk tugas individu/kelompok)</em><br>Video rapi, transisi halus, siap kumpulkan ke guru/dosen.</p>
+        <nav class="navbar">
+            <div class="logo-placeholder"></div>
+            <ul class="nav-links">
+                <li><a href="#home">Event</a></li>
+                <li><a href="#gallery" class="active">Galery</a></li>
+                <li><a href="#setting">Setting</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#"><i class="fa-solid fa-ellipsis"></i></a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="https://via.placeholder.com/100" alt="Profile" class="profile-pic">
+                <div class="verified-badge"><i class="fa-solid fa-check"></i></div>
             </div>
-            <div class="price-card fade-in slide-up" style="transition-delay: 0.2s;">
-                <h3>2. Short Movie</h3>
-                <div class="price">Rp50k/mnt</div>
-                <p><em>(Cinematic look, transisi rapi, & color grading)</em><br>Cocok untuk project film pendek atau lomba.</p>
+            
+            <div class="hero-text-wrapper">
+                <h1 class="hero-title">Capture<br>The moment's</h1>
+                <i class="fa-regular fa-bookmark bookmark-icon"></i>
             </div>
-            <div class="price-card fade-in slide-up" style="transition-delay: 0.4s;">
-                <h3>3. Full Service (Take + Edit)</h3>
-                <div class="price">Rp75k+</div>
-                <p><em>(Terima beres! Tergantung durasi dan lokasi)</em><br>Kami rekam adegannya, kami edit videonya, Anda tinggal duduk manis.</p>
-            </div>
-            <div class="price-note fade-in">
-                <strong>*Note:</strong> Harga akhir menyesuaikan tingkat kesulitan dan deadline. Makin santai deadline-nya, makin asik harganya 🙌🏼
+            <p class="hero-subtitle">of human activities.</p>
+            
+            <div class="hero-footer">
+                <p class="team-text">WITH OUR TEAM | VARZETA PRODUCTION</p>
+                <a href="#" class="btn-achievement">achievement</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="gallery">
-        <h2 class="section-title fade-in">My Galery</h2>
-        <p class="section-subtitle fade-in">Foto berikut adalah hasil karya hamba, dengan jepretan kamera.</p>
-        
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-header">
+            <div>
+                <h2 class="section-title">My galery</h2>
+                <p class="section-subtitle">foto berikut adalah hasil karya hamba, dengan jepretan kamera</p>
+            </div>
+            <ul class="nav-links-secondary">
+                <li><a href="#home">Event</a></li>
+                <li><a href="#gallery" class="active-badge">GALERY</a></li>
+                <li><a href="#setting">Setting</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#"><i class="fa-solid fa-ellipsis"></i></a></li>
+            </ul>
+        </div>
+
         <div class="gallery-grid">
-            <div class="gallery-item fade-in"><img src="gambar1.jpg" alt="Galeri 1"></div>
-            <div class="gallery-item fade-in"><img src="gambar2.jpg" alt="Galeri 2"></div>
-            <div class="gallery-item fade-in"><img src="gambar3.jpg" alt="Galeri 3"></div>
-            <div class="gallery-item fade-in"><img src="gambar4.jpg" alt="Galeri 4"></div>
-            <div class="gallery-item fade-in"><img src="gambar5.jpg" alt="Galeri 5"></div>
-            <div class="gallery-item fade-in"><img src="gambar6.jpg" alt="Galeri 6"></div>
-            <div class="gallery-item fade-in"><img src="gambar7.jpg" alt="Galeri 7"></div>
-            <div class="gallery-item fade-in"><img src="gambar8.jpg" alt="Galeri 8"></div>
-            <div class="gallery-item fade-in"><img src="gambar9.jpg" alt="Galeri 9"></div>
-            <div class="gallery-item fade-in"><img src="gambar10.jpg" alt="Galeri 10"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Gallery 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Gallery 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Gallery 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Gallery 4"></div>
         </div>
     </section>
 
-    <section id="team">
-        <h2 class="section-title fade-in">Our Team</h2>
-        <p class="section-subtitle fade-in">Orang-orang hebat di balik karya yang memukau.</p>
-        
-        <div class="team-grid">
-            <div class="team-card fade-in">
-                <img src="foto_tim1.jpg" alt="Anggota Tim 1" class="team-img" onerror="this.src='https://ui-avatars.com/api/?name=T1&background=random&size=250'">
-                <h4>[Nama Anggota 1]</h4>
-                <p>[Deskripsi dan role anggota 1, misalnya: Videographer & Editor]</p>
+    <section class="about-section" id="about">
+        <div class="overlay-dark"></div>
+        <div class="about-content">
+            <div class="about-quote">
+                <h2>"Karya yang bagus adalah karya yang kau sukai"</h2>
             </div>
-            <div class="team-card fade-in">
-                <img src="foto_tim2.jpg" alt="Anggota Tim 2" class="team-img" onerror="this.src='https://ui-avatars.com/api/?name=T2&background=random&size=250'">
-                <h4>[Nama Anggota 2]</h4>
-                <p>[Deskripsi dan role anggota 2, misalnya: Conceptor & Director]</p>
+            <div class="about-text">
+                <h3>Sekilas tentang Saya.</h3>
+                <p>Saya mengenal tentang dunia editing dan fotografi sejak tahun 2019, dimana saya pernah mengikuti kegiatan kelas fotografi, hingga di Tahun 2023 Saya mendapatkan titipan sebuah kamera dari Tuhan untuk saya jaga hingga di tahun 2024 ini saya suka dengan fotografi dan sebagian karya-karya fotografi saya di ambil dari sebuah kamera Canon 550d.</p>
             </div>
-            <div class="team-card fade-in">
-                <img src="foto_tim3.jpg" alt="Anggota Tim 3" class="team-img" onerror="this.src='https://ui-avatars.com/api/?name=T3&background=random&size=250'">
-                <h4>[Nama Anggota 3]</h4>
-                <p>[Deskripsi dan role anggota 3, misalnya: Colorist & Stylist]</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about fade-in">
-        <div class="about-quote">
-            <h2>"Karya yang bagus adalah karya yang kau sukai"</h2>
-        </div>
-        <div class="about-text">
-            <p><strong>Sekilas tentang Saya.</strong></p>
-            <p>Saya mengenal tentang dunia editing dan fotografi sejak tahun 2019, dimana saya pernah mengikuti kegiatan kelas fotografi, hingga di Tahun 2023 Saya mendapatkan titipan sebuah kamera dari Tuhan untuk saya jaga hingga di tahun 2024 ini saya suka dengan fotografi dan sebagian karya-karya fotografi saya di ambil dari sebuah kamera Canon 550d.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">
-            <h2>Sip<span>Beress</span></h2>
-            <p>Production</p>
         </div>
         
-        <div class="social-icons">
-            <a href="https://instagram.com/USERNAME_IG_ANDA" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
-    </footer>
+        <footer class="footer">
+            <div class="logo">
+                <h2 class="logo-text"><span class="highlight">VM</span> Varzeta<br><span class="sub-logo">Production</span></h2>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-icon messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            </div>
+        </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
