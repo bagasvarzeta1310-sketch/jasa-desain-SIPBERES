@@ -1,149 +1,144 @@
-/* === UPDATE GALLERY UNTUK 10 FOTO === */
-.gallery-grid {
-    display: grid;
-    /* Membuat 5 kolom di desktop agar 10 foto menjadi 2 baris rapi */
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px;
+/* --- VARIABEL & RESET --- */
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-darker: #121212;
+    --text-light: #ffffff;
+    --text-gray: #b3b3b3;
+    --accent-color: #f39c12; /* Warna kuning emas */
+    --transition: all 0.3s ease;
 }
 
-/* === PRICELIST SECTION === */
-.pricelist-section {
-    background-color: #2a2a2a;
-    padding: 60px 5%;
-    border-top: 1px solid rgba(255,255,255,0.05);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.pricelist-content {
-    background: #333;
-    padding: 40px;
-    border-radius: 15px;
-    border-left: 5px solid #ffca28;
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
 }
 
-.pricelist-subtitle {
-    font-size: 1.5rem;
-    color: #ffca28;
-    margin: 20px 0 15px;
-}
-
-.price-items {
-    list-style: none;
-    margin-bottom: 25px;
-}
-
-.price-items li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(255,255,255,0.2);
-}
-
-.price-items em {
-    color: #bbb;
-    font-size: 0.95rem;
-    display: block;
-    margin-top: 5px;
-}
-
-.price-note {
-    background: rgba(255, 202, 40, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-    color: #ffd54f;
-    font-size: 0.95rem;
-}
-
-/* === TEAM SECTION === */
-.team-section {
-    background-color: #222;
-    padding: 60px 5%;
-}
-
-.text-center {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.team-card {
-    background: #333;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-10px);
-}
-
-.team-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ffca28;
-    margin-bottom: 15px;
-}
-
-.team-name {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.team-desc {
-    font-size: 0.9rem;
-    color: #bbb;
-    line-height: 1.6;
-}
-
-/* === KONTAK BUTTON === */
-.contact-actions {
+/* --- NAVBAR --- */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
 }
+nav.scrolled {
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.logo { font-size: 24px; font-weight: 700; color: var(--text-light); text-decoration: none;}
+.logo span { color: var(--accent-color); }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { color: var(--text-light); text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+.menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--text-light); }
 
-.btn-contact {
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920&auto=format&fit=crop') center/cover;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: opacity 0.3s;
+    padding: 0 10%;
+    position: relative;
 }
-
-.btn-contact:hover {
-    opacity: 0.8;
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9));
+    z-index: 1;
 }
-
-.wa-btn {
-    background-color: #25D366;
-    color: #fff;
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
 }
+.profile-wrapper { position: relative; display: inline-block; margin-bottom: 20px; }
+.profile-img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; object-fit: cover; }
+.verified-badge { position: absolute; bottom: 5px; right: 5px; background: #1da1f2; color: white; border-radius: 50%; padding: 5px; font-size: 12px; }
+.hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 5px; }
+.hero h2 span { color: var(--accent-color); font-size: 1.2rem; display: block; margin-top: 5px; font-weight: 400;}
+.hero p { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-top: 30px; color: var(--text-gray); border-left: 2px solid var(--accent-color); padding-left: 10px;}
 
-.ig-btn {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #fff;
+.whatsapp-btn {
+    background-color: #25D366; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); margin-top: 20px;
 }
+.whatsapp-btn:hover { background-color: #128C7E; transform: scale(1.05); }
 
-/* === RESPONSIVE UPDATES === */
-@media screen and (max-width: 1024px) {
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
+/* --- SECTION UMUM --- */
+section { padding: 80px 10%; }
+.section-title { font-size: 2.5rem; margin-bottom: 10px; }
+.section-subtitle { color: var(--text-gray); margin-bottom: 40px; font-size: 0.9rem; }
+
+/* --- PRICELIST SECTION --- */
+.pricelist-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.price-card { background: var(--bg-darker); padding: 30px; border-radius: 15px; border-top: 4px solid var(--accent-color); transition: var(--transition); }
+.price-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); border-color: #fff; }
+.price-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+.price-card .price { font-size: 2rem; color: var(--accent-color); font-weight: bold; margin-bottom: 10px; }
+.price-card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
+.price-note { grid-column: 1 / -1; background: rgba(243, 156, 18, 0.1); padding: 20px; border-radius: 10px; text-align: center; color: var(--accent-color); margin-top: 20px; font-size: 0.95rem;}
+
+/* --- GALLERY SECTION --- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.gallery-item { height: 350px; border-radius: 15px; overflow: hidden; position: relative; cursor: pointer; background: #333; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.7); }
+.gallery-item:hover img { transform: scale(1.1); filter: brightness(1); }
+
+/* --- TEAM SECTION --- */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.team-card { background: var(--bg-darker); border-radius: 15px; overflow: hidden; text-align: center; padding-bottom: 25px; transition: var(--transition); border: 1px solid #333;}
+.team-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
+.team-img { width: 100%; height: 280px; object-fit: cover; background: #222; }
+.team-card h4 { margin: 20px 0 5px; font-size: 1.2rem; color: var(--text-light); }
+.team-card p { color: var(--text-gray); font-size: 0.85rem; padding: 0 20px; line-height: 1.5;}
+
+/* --- ABOUT SECTION --- */
+.about {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1920&auto=format&fit=crop') center/cover;
+    display: flex; flex-wrap: wrap; gap: 50px; align-items: center; border-radius: 20px; margin: 0 10% 80px; padding: 60px;
 }
+.about-quote { flex: 1; min-width: 300px; }
+.about-quote h2 { font-size: 2.5rem; line-height: 1.3; font-style: italic; }
+.about-text { flex: 1; min-width: 300px; }
+.about-text p { color: var(--text-gray); line-height: 1.8; margin-bottom: 20px; }
 
-@media screen and (max-width: 768px) {
+/* --- FOOTER --- */
+footer { background: #0a0a0a; padding: 40px 10%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid #222;}
+.footer-logo h2 { color: var(--accent-color); font-size: 1.8rem;}
+.footer-logo span { color: white; }
+.footer-logo p { font-size: 12px; color: var(--text-gray); letter-spacing: 2px; text-transform: uppercase;}
+.social-icons a { color: var(--text-gray); font-size: 1.5rem; margin-left: 20px; transition: var(--transition); }
+.social-icons a:hover { color: var(--accent-color); transform: translateY(-5px); display: inline-block;}
+
+/* --- ANIMASI (Dipicu oleh JS) --- */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.appear { opacity: 1; transform: translateY(0); }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    .nav-links { position: absolute; top: 100%; right: -100%; background: var(--bg-darker); flex-direction: column; width: 100%; text-align: center; padding: 20px 0; transition: var(--transition); border-top: 1px solid #333;}
+    .nav-links.active { right: 0; }
+    .menu-toggle { display: block; }
+    
+    .hero h1 { font-size: 2.8rem; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .team-grid { grid-template-columns: 1fr; }
-    .contact-actions { flex-direction: column; width: 100%; }
-    .btn-contact { justify-content: center; }
-    .pricelist-content { padding: 20px; }
+    .about { margin: 0 5% 50px; padding: 40px 20px; }
+    .about-quote h2 { font-size: 1.8rem; }
+    
+    footer { flex-direction: column; text-align: center; justify-content: center; }
+    .social-icons a { margin: 0 10px; }
 }
